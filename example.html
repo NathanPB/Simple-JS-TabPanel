@@ -1,0 +1,60 @@
+<html>
+
+  <head>
+    <!-- Loads the script -->
+    <script src="tabpanel.js"></script>
+  </head>
+  <body>
+
+    <!-- Create the container. It needs to receive the id "container-`your-tabpanel-id`" -->
+    <div id="container-main">
+      <!-- Adds the content for the first item. It needs to receive the id "tabpanel-`your-tabpanel-id`-`item-id`-content" -->
+      <div id="tabpanel-main-1-content"> Item 01 </div>
+        <!-- Adds the content for the second item. It needs to receive the id "tabpanel-`your-tabpanel-id`-`item-id`-content" -->
+      <div id="tabpanel-main-2-content"> Item 02 </div>
+        <!-- Adds the content for the third item. It needs to receive the id "tabpanel-`your-tabpanel-id`-`item-id`-content" -->
+      <div id="tabpanel-main-3-content"> Item 03 </div>
+    </div>
+
+    <!-- Runs the script to create the tabpanel. It needs to appear AFTER the container-->
+    <script>
+      new tabPanel(
+
+        //The first argument is the tabpanel id. In this case, its "main"
+        "main",
+
+        //The second one is the configurations
+        {
+
+          //Here is defined all the tabpanel items
+          items:[
+
+            //The first item has ID "1" (note, as STRING). Its title is "Item Title 01" and when clicked it will execute "console.log('hello world');"
+            {
+                id:"1",
+                title:"Item Title 01",
+                onclick:"console.log('hello world');"
+            },
+
+            //Second item
+            {
+                id:"2",
+                title:"Item Title 02"
+            },
+
+            //Third item
+            {
+                id:"3",
+                title:"Item Title 03"
+            }
+          ],
+
+          //Here you can set any attrubute to the tabpanel. Note that the "id" one will be overwritten by the tabpanel's id
+          attributes:{
+            class:"example-class"
+          }
+        }
+    )
+    </script>
+  </body>
+</html>
