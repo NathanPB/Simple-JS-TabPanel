@@ -1,5 +1,5 @@
 class tabPanel {
-  constructor(id, config){
+  constructor(id, items, attributes){
     document.head.innerHTML+=`<style>
       .tabpanel {
         list-style: none;
@@ -24,8 +24,8 @@ class tabPanel {
         float: right;
       }
     </style>`
-    if('attributes' in config){
-      this.attributes = config['attributes'];
+    if(attributes){
+      this.attributes = attributes;
     } else {
       this.attributes = {};
     }
@@ -38,7 +38,7 @@ class tabPanel {
     } else {
       this.attributes['class'] = "tabpanel";
     }
-    this.items = config['items'];
+    this.items = items;
 
     let item;
     for(item in this.items){
